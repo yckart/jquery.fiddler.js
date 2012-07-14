@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>jQuery.jsFiddler.js [demo]</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div id="header">
+        <a href="/" class="logo"><img src="http://jsfiddle.net/img/logo.png" alt></a>
+        <a href="#username" class="login">Login</a>
+        <ul class="login-menu">
+            <li><a href="">Dashboard</a></li>
+            <li><a href="">Settings</a></li>
+            <li><a href="mailto:mail@yckart.com">Help</a></li>
+            <li><a href="">Logout</a></li>
+        </ul>
+    </div>
+
+    <div id="jsFiddler"></div>
+
+    <div id="footer">
+        <input class="jsfiddler-search" type="text" value="Search your fiddles..." autocomplete="off">
+    </div>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            // @action: call the plugin
+            $('#jsFiddler').jsFiddler({
+                name: 'ARTsinn',
+                limit: 300,
+                order: 'desc'
+            });
+
+            // @action: show/hide login-menu
+            var state = false;
+            $('.login').click(function() {
+                if (state === false) {
+                    $('.login-menu').fadeIn();
+                    state = true;
+                } else {
+                    $('.login-menu').fadeOut();
+                    state = false;
+                }
+            });
+            // @action: hide login-menu on 'body' click
+            $("#jsFiddler").click(function() {
+                $('.login-menu').fadeOut();
+                state = false;
+            });
+
+
+
+            // @action: scroll to top on logo click
+            $('.logo').click(function() {
+                $('#jsFiddler').stop().animate({
+                    scrollTop: 0
+                }, 800);
+                return false;
+            });
+        });
+    </script>
+
+</body>
+</html>
