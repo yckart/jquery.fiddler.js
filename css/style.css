@@ -1,0 +1,56 @@
+body{
+    font-family: Helvetica, Arial, Verdana, sans-serif;
+    background: #f6f6f6
+}
+
+#header {width:100%; height:44px; position:fixed; top:0; z-index:1; background: #3D668F url(http://jsfiddle.net/img/top-bg.png) repeat-x; border-bottom: 1px solid #ddd}
+#header .logo {position:absolute; top:10px; left:10px}
+#header .login {
+    float:right;
+    display: block;
+    outline: none;
+    margin:8px 10px 0 0;
+    padding: 0 26px 0 10px;
+    line-height:26px;
+    color: #fff;
+    font-size: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    text-shadow: 0 1px 1px #253E5C;
+    background:#45719B url(http://jsfiddle.net/img/actions.png) 100% -26px no-repeat;
+    border: solid 1px #26445F;
+}
+#header .login-menu{
+    display:none;
+    position: absolute;
+    top: 44px;
+    right: 0px;
+    width:200px;
+    z-index: 1;
+    padding:0px 6px 6px;
+    background: rgba(0, 0, 0, 0.3);
+    -webkit-border-bottom-right-radius: 4px;
+    -webkit-border-bottom-left-radius: 4px;
+    -moz-border-radius-bottomright: 4px;
+    -moz-border-radius-bottomleft: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+#header .login-menu li {margin:0; padding:3px 10px 3px; background:#fff}
+#header .login-menu li a {font-size: 11px; color:#5AA4D7; text-decoration:none}
+
+
+#jsFiddler{
+    width:100%;
+    position:absolute;
+    top:44px
+}
+#jsFiddler ol {margin:0; padding:20px; list-style:none; word-wrap:break-word; *text-overflow:ellipsis}
+#jsFiddler ol li a {color:#5AA4D7; text-decoration:none}
+#jsFiddler ol li time {color:#aaa; font-size:11px}
+#jsFiddler ol li p {color:#434343; font-size:12px}
+
+.loader {width:16px; height:16px; position:fixed; top:50%; left:50%; margin-top:-8px; margin-left:-8px}
+
+#footer{position:fixed; width:100%; bottom:0; height:32px; padding-bottom:16px}
+#footer .jsfiddler-search {margin:10px auto; padding-right:20px; text-align:center}
