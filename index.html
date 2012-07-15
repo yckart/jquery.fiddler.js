@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>jQuery.fiddler.js by yckart</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>jQuery.fiddler.js</h1>
+        <h2>A small but beautiful jQuery plugin, written to display all your saved fiddles from jsFiddle.net.</h2>
+        <a href="https://github.com/yckart/jQuery.fiddler.js" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>jQuery.Fiddler.js</h1>
+
+<h2>Description</h2>
+
+<p>A small but beautiful jQuery plugin, written to display all your saved fiddles on jsFiddle.net.</p>
+
+<p>What <a href="http://jsfiddle.net/">jsFiddle.net</a> is, I have to explain probably not great. However, in a nutshell for those who do not know: jsFiddle is a nice online service that allow users to store, process and test javascript directly in their browser.</p>
+
+<p>Those of you who have already worked with jsFiddle.net be able to follow me when I say, that it is a horror to 'need' to click through an endless list of pages. For example, if there is a script written in the past and you have to recover a valid approach.</p>
+
+<p>Thus arose jqFiddler, a plugin using <a href="http://jquery.com/">jQuery</a> written to display stored code fragments of a jsFiddle user. Each user!</p>
+
+<p>The data is loaded, through the <a href="http://doc.jsfiddle.net/api/fiddles.html">API</a> via jsFiddle's JSON document provided, into a searchable list. Optionally, this list can be divided into several pages.</p>
+
+<h3>German is your native language?</h3>
+
+<p>Then you will be interested in the German <a href="http://netzfakten.de/codeschnipsel-von-jsfiddle-net-anzeigen-lassen">article</a> intended for this plugin from <a href="http://netzfakten.de/">Netzfakten.de</a>!</p>
+
+<h2>Features</h2>
+
+<ul>
+<li>It's really easy to setup (Whether markup or initialization, both is foolproof)</li>
+<li>No need to login (You must specify at least a username)</li>
+<li>No need to configure much (It works well "out of the box", if you like to see <strong>my</strong> fiddles!)</li>
+<li>Lots of settings (You have over 15 different adjustment possibilities)</li>
+<li>And... lots more!</li>
+</ul><h2>How to use</h2>
+
+<h3>Integrating jQuery and the plugin</h3>
+
+<pre><code>&lt;script type="text/javascript" src="http://code.jquery.com/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="js/jQuery.fiddler.js"&gt;&lt;/script&gt;
+</code></pre>
+
+<h3>Setting up the HTML markup</h3>
+
+<pre><code>&lt;div id="jsFiddler"&gt;&lt;/div&gt;
+&lt;input class="jsfiddler-search" type="text" value="Search your fiddles..." autocomplete="off"&gt;
+</code></pre>
+
+<h3>Initialization of the plugin</h3>
+
+<pre><code>$(".jsFiddler").jsFiddler(); // If you define no user name, my fiddles are indicated
+</code></pre>
+
+<h2>Options</h2>
+
+<p>To customize the data output are some configuration options available. In the following this will be explained a little.
+To change the properties settings of the plugin must be loaded only with the necessary options:</p>
+
+<h3>Display options</h3>
+
+<ul>
+<li>
+<code>name</code> The name of a jsFiddle-User</li>
+<li>
+<code>start</code> The position from which the JSON document is read (default: 0)</li>
+<li>
+<code>limit</code> Limits the objects to be displayed on a certain number (default: 10)</li>
+<li>
+<code>sort</code> Sorting filter (default: "date")</li>
+<li>
+<code>order</code> Change the sort order (default: "ASC")</li>
+</ul><h3>List Options</h3>
+
+<ul>
+<li>
+<code>description</code> Return the description (default: "true")</li>
+<li>
+<code>author</code> den Return the author (default: "false")</li>
+<li>
+<code>url</code> Return the URL (default: "true")</li>
+<li>
+<code>created</code> Return the creation date (default: "true")</li>
+<li>
+<code>framework</code> Return the used framework (default: "false")</li>
+<li>
+<code>version</code> Return the version (default: "false")</li>
+<li>
+<code>latest_version</code> Return the latest version (default: "false")</li>
+<li>
+<code>title</code> Return the title (default: "true")</li>
+</ul><h3>Search Options</h3>
+
+<ul>
+<li>
+<code>search</code> Selects the search input field for the search form (default: ".jsfiddler-search")</li>
+</ul><h3>Paging Options</h3>
+
+<ul>
+<li>
+<code>paging</code> Activate paging (default: "false")</li>
+<li>
+<code>items</code> Number of entries per page (default: 10)</li>
+<li>
+<code>controls</code> Selector for the paging navigation (default: ".jsfiddler-controls")</li>
+</ul><h2>Demo</h2>
+
+<p>To get an idea of ??how the plugin works and what it does, here's a simple <a href="http://jsfiddle.net/ARTsinn/CVUvD/show/">demo</a>. This shows all fiddles from '<a href="http://artsinn.de/">ARTsinn</a>', the corporate profile of my design company.</p>
+
+<h2>Limitations</h2>
+
+<p>The plugin is currently still in beta, but it was already published in order to carry out first resonances.</p>
+
+<ul>
+<li><p>The "Paging" -function know in connection with the search still fatal errors. It will be on every single page only displays the fiddles the also have been entered in the search screen. Therefore, I recommend not to use this feature yet.</p></li>
+<li><p>There is currently no reloading of data possible. There must be an entire page to reload in order to bring the view up to date.</p></li>
+<li><p>Problems with caching the JSON data stream in the "mobile-web-app-capable" view. Say, if you look the page with an iPhone as a bookmark on the home screen. Start the WebApp, switches back to the home screen and then return back to the WebApp. The entire page and therefore the complete JSON-Data has to be recharged. For the user, the huge waiting time.</p></li>
+</ul><p>I'll try the restrictions as promptly as possible to fix. If you have tips on how you can improve the plugin, let me know!</p>
+
+<h2>License</h2>
+
+<p>Copyright (c) 2012 Yannick Albert
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+
+<h2>Changelog</h2>
+
+<p>v0.1 The plugin has been released</p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/yckart/jQuery.fiddler.js/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/yckart/jQuery.fiddler.js/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/yckart/jQuery.fiddler.js"></a> is maintained by <a href="https://github.com/yckart">yckart</a>.</p>
+
+          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
