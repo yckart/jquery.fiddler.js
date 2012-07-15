@@ -160,7 +160,7 @@
             });
 
             var img = document.createElement("img");
-            img.setAttribute("src", "../img/loader.gif");
+            img.setAttribute("src", "img/loader.gif");
             img.setAttribute("class", "loader");
             document.getElementById('jsFiddler').appendChild(img);
 

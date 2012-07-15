@@ -1,28 +1,30 @@
-<!DOCTYPE html>
+<!doctype html>
 
-<html>
+<html lang="de-DE" class="no-js">
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>jQuery.jsFiddler.js [demo]</title>
-
+  <meta charset="utf-8">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <link rel="stylesheet" type="text/css" href="css/base.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/style.css">
+
+  <title>jQuery.fiddler.js</title>
 </head>
 
 <body>
     <div id="header">
         <a href="/" class="logo"><img src="http://jsfiddle.net/img/logo.png" alt></a>
-        <a href="#username" class="login">Login</a>
-        <ul class="login-menu">
-            <li><a href="">Dashboard</a></li>
-            <li><a href="">Settings</a></li>
-            <li><a href="mailto:mail@yckart.com">Help</a></li>
-            <li><a href="">Logout</a></li>
-        </ul>
+        <a href="javascript:;" class="login">Login</a>
+        <nav role="navigation">
+            <ul class="login-menu">
+                <li><a href="http://artsinn.de">Dashboard</a></li>
+                <li><a href="http://yckart.de">Settings</a></li>
+                <li><a href="http://netzfakten.de/codeschnipsel-von-jsfiddle-net-anzeigen-lassen">Help</a></li>
+                <li><a href="http://yckart.com">Logout</a></li>
+            </ul>
+        </nav>
     </div>
 
     <div id="jsFiddler"></div>
@@ -31,7 +33,8 @@
         <input class="jsfiddler-search" type="text" value="Search your fiddles..." autocomplete="off">
     </div>
 
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/jQuery.fiddler.js"></script>
     <script type="text/javascript">
         $(function() {
             // @action: call the plugin
@@ -45,11 +48,13 @@
             var state = false;
             $('.login').click(function() {
                 if (state === false) {
-                    $('.login-menu').fadeIn();
-                    state = true;
+                    $('.login-menu').fadeIn(function(){
+                        state = true;
+                    });
                 } else {
-                    $('.login-menu').fadeOut();
-                    state = false;
+                    $('.login-menu').fadeOut(function(){
+                        state = false;
+                    });
                 }
             });
             // @action: hide login-menu on 'body' click
@@ -62,7 +67,7 @@
 
             // @action: scroll to top on logo click
             $('.logo').click(function() {
-                $('#jsFiddler').stop().animate({
+                $('html,body').stop().animate({
                     scrollTop: 0
                 }, 800);
                 return false;

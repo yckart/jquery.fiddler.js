@@ -1,3 +1,6 @@
+* html{overflow-y:visible}
+  html{overflow-y:scroll}
+
 body {
     font-family: Helvetica, Arial, Verdana, sans-serif;
     background: #f6f6f6
@@ -5,7 +8,7 @@ body {
 
 .loader {width:16px; height:16px; position:fixed; top:50%; left:50%; margin-top:-8px; margin-left:-8px}
 
-#header {width:100%; height:44px; position:fixed; top:0; z-index:1; background:#3d668f url(../img/top-bg.png) repeat-x; border-bottom: 1px solid #ddd}
+#header {width:100%; height:44px; position:fixed; top:0; z-index:1; background:#3d668f url(../img/top-bg.png) repeat-x; border-bottom:1px solid #ddd}
 #header .logo {position:absolute; top:10px; left:10px}
 #header .login {
     float: right;
@@ -23,7 +26,7 @@ body {
          -o-text-shadow: 0 1px 1px #253e5c;
             text-shadow: 0 1px 1px #253e5c;
     background: #45719B url(../img/actions.png) 100% -26px no-repeat;
-    border: solid 1px #26445F;
+    border: solid 1px #26445F
 }
 #header .login-menu {
     display: none;
@@ -32,8 +35,8 @@ body {
     top: 44px;
     right: 0px;
     z-index: 1;
-    padding:0px 6px 6px;
-    background:#aaa;
+    padding: 0px 6px 6px;
+    background: #aaa;
     background: rgba(0, 0, 0, 0.3);
     -webkit-border-bottom-right-radius: 4px;
      -webkit-border-bottom-left-radius: 4px;
